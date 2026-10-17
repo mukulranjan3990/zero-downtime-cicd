@@ -1,0 +1,7 @@
+sudo nginx -t
+upstream novapay_backend {
+    server 127.0.0.1:8082;
+    keepalive 32;
+}
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful

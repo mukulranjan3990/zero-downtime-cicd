@@ -1,0 +1,19 @@
+Currently active: blue
+Deploying image: mukul3990/zero-downtime-api:latest
+Target: green on port 8082
+latest: Pulling from mukul3990/zero-downtime-api
+Digest: sha256:6299475299ba6b49cb97c3e2fd78a59692bb9f507db9b1e2e5da2c922d37d5c4
+Status: Image is up to date for mukul3990/zero-downtime-api:latest
+docker.io/mukul3990/zero-downtime-api:latest
+96f59970e1611fc0649d0134e542fa0ac50e0bb245299f54280d0c10619c238b
+Health check 1/5...
+curl: (56) Recv failure: Connection reset by peer
+Health check 2/5...
+{"status":"healthy"}
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+Traffic switched to green on port 8082.
+{"status":"healthy"}novapay-blue
+Deployment completed successfully.
+CONTAINER ID   IMAGE                                COMMAND                  CREATED         STATUS         PORTS                      NAMES
+96f59970e161   mukul3990/zero-downtime-api:latest   "uvicorn app.main:ap…"   4 seconds ago   Up 3 seconds   127.0.0.1:8082->8000/tcp   novapay-green
