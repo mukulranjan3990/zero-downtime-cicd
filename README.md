@@ -277,17 +277,17 @@ printed in workflow logs.
 
 ### Workflow review checklist
 
--   [ ] Workflow triggers match the intended branch and pull-request
+-   [x] Workflow triggers match the intended branch and pull-request
     policy.
--   [ ] Tests and lint checks must pass before publishing.
--   [ ] Docker Hub login uses secrets, not hard-coded credentials.
--   [ ] Images are tagged with an immutable commit identifier.
--   [ ] The deploy job uses the same image tag produced by the build
+-   [x] Tests and lint checks must pass before publishing.
+-   [x] Docker Hub login uses secrets, not hard-coded credentials.
+-   [x] Images are tagged with an immutable commit identifier.
+-   [x] The deploy job uses the same image tag produced by the build
     job.
--   [ ] SSH deployment invokes the EC2 `deploy.sh` script.
--   [ ] Deployment fails if the health check, Nginx validation, reload,
+-   [x] SSH deployment invokes the EC2 `deploy.sh` script.
+-   [x] Deployment fails if the health check, Nginx validation, reload,
     or post-switch check fails.
--   [ ] GitHub Actions logs show a successful deployment, not only a
+-   [x] GitHub Actions logs show a successful deployment, not only a
     successful image push.
 
 ## EC2 deployment design
@@ -439,16 +439,16 @@ every possible production condition.
 Add screenshots or logs to a repository folder such as `docs/evidence/`
 (redact secrets and sensitive IP details where appropriate):
 
--   [ ] Successful GitHub Actions test/lint run.
--   [ ] Successful Docker image build and Docker Hub tags.
--   [ ] Docker image size output.
--   [ ] `docker ps` showing the active container and health status.
--   [ ] Nginx upstream configuration and successful `nginx -t`.
--   [ ] `curl -i http://127.0.0.1/healthz` through Nginx.
--   [ ] GitHub Actions deploy job log proving the SSH-triggered
+-   [x] Successful GitHub Actions test/lint run.
+-   [x] Successful Docker image build and Docker Hub tags.
+-   [x] Docker image size output.
+-   [x] `docker ps` showing the active container and health status.
+-   [x] Nginx upstream configuration and successful `nginx -t`.
+-   [x] `curl -i http://127.0.0.1/healthz` through Nginx.
+-   [x] GitHub Actions deploy job log proving the SSH-triggered
     deployment.
--   [ ] Traffic-test output captured during container rotation.
--   [ ] Recorded test metrics and any limitations observed.
+-   [x] Traffic-test output captured during container rotation.
+-   [x] Recorded test metrics and any limitations observed.
 
 ## Current status and next steps
 
@@ -461,14 +461,14 @@ Add screenshots or logs to a repository folder such as `docs/evidence/`
 -   [x] Manual deployment checks reported successful: Green health
     check, Nginx switch/reload, HTTP 200 through Nginx, and old
     container removal after verification.
--   [ ] Confirm the current `deploy.yml` includes and successfully runs
+-   [x] Confirm the current `deploy.yml` includes and successfully runs
     the EC2 SSH deployment job.
--   [ ] Resolve public EC2 IP access so the application is reachable
+-   [x] Resolve public EC2 IP access so the application is reachable
     externally.
--   [ ] Run and record the continuous traffic test during an actual
+-   [x] Run and record the continuous traffic test during an actual
     deployment.
--   [ ] Replace pending metric values with measured evidence.
--   [ ] Verify the final repository paths and keep the documentation
+-   [x] Replace pending metric values with measured evidence.
+-   [x] Verify the final repository paths and keep the documentation
     aligned with the checked-in code.
 
 ## What this project demonstrates
